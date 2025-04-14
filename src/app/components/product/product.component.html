@@ -1,0 +1,30 @@
+<!-- <p>product works!</p> -->
+<div
+  class="container p-2 m-1 d-flex justify-content-between align-items-center border border-dark rounded-3"
+>
+  <!-- Logo on the left -->
+
+  <!-- Nav links on the right -->
+  @for (product of products; track product.prductId ;) {
+  <div class="card m-2" style="width: 18rem">
+    <img [src]="product.imageURL" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.productName }}</h5>
+      <p class="card-text">
+        {{ product.productPrice }}
+      </p>
+      <span [class.onsale]="product.onSale" class="card-text">
+        {{ product.onSale ? "on sale" : "not on sale" }}
+      </span>
+    </div>
+  </div>
+  }
+
+  <!-- <div>
+    <p class="mx-2">{{ products[0].productName }}</p>
+    <p class="mx-2">{{ products[0].productPrice }}</p>
+    <p [class.onsale]="products[1].onSale">
+      {{ products[1].onSale ? "on sale" : "not on sale" }}
+    </p>
+  </div> -->
+</div>
