@@ -6,25 +6,11 @@
 
   <!-- Nav links on the right -->
   @for (product of products; track product.prductId ;) {
-  <div class="card m-2" style="width: 18rem">
-    <img [src]="product.imageURL" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">{{ product.productName }}</h5>
-      <p class="card-text">
-        {{ product.productPrice }}
-      </p>
-      <span [class.onsale]="product.onSale" class="card-text">
-        {{ product.onSale ? "on sale" : "not on sale" }}
-      </span>
-    </div>
-  </div>
+  <app-product-card
+    [name]="product.productName"
+    [price]="product.productPrice"
+    [image]="product.imageURL"
+    [onSale]="product.onSale"
+  ></app-product-card>
   }
-
-  <!-- <div>
-    <p class="mx-2">{{ products[0].productName }}</p>
-    <p class="mx-2">{{ products[0].productPrice }}</p>
-    <p [class.onsale]="products[1].onSale">
-      {{ products[1].onSale ? "on sale" : "not on sale" }}
-    </p>
-  </div> -->
 </div>
